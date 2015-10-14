@@ -1,4 +1,7 @@
+"use strict";
+
 define(['backbone','backbone.localStorage'], function(Backbone) {
+	
 	// Todo Model
 	var Todo = Backbone.Model.extend({
 

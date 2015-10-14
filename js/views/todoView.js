@@ -1,6 +1,8 @@
+"use strict";
+
 define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], function(json2, $,_, Backbone,todoModel) {
 
-	// Create our global collection of **Todos**.
+	// Create a "Todos" variable
 	var Todos = new todoModel.TodoList;
 
 	// Todo Item View
@@ -8,14 +10,14 @@ define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], func
 
 		tagName: "li",
 
-		template: _.template($('#item-template').html()),
+		template: _.template($('#item_template').html()),
 
 		events: {
-			"click .toggle": "toggleDone",
-			"dblclick .view": "edit",
-			"click a.destroy": "clear",
-			"keypress .edit": "updateOnEnter",
-			"blur .edit": "close"
+			"click .oso-todo-toggle": "toggleDone",
+			"dblclick .oso-todo-view": "edit",
+			"click .oso-todo-destroy": "clear",
+			"keypress .oso-todo-edit": "updateOnEnter",
+			"blur .oso-todo-edit": "close"
 		},
 
 		initialize: function() {
@@ -26,7 +28,7 @@ define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], func
 		render: function() {
 			this.$el.html(this.template(this.model.toJSON()));
 			this.$el.toggleClass('done', this.model.get('done'));
-			this.input = this.$('.edit');
+			this.input = this.$('.oso-todo-edit');
 			return this;
 		},
 
@@ -35,7 +37,7 @@ define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], func
 		},
 
 		edit: function() {
-			this.$el.addClass("editing");
+			this.$el.addClass("oso-todo-editing");
 			this.input.focus();
 		},
 
@@ -47,7 +49,7 @@ define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], func
 				this.model.save({
 					title: value
 				});
-				this.$el.removeClass("editing");
+				this.$el.removeClass("oso-todo-editing");
 			}
 		},
 
@@ -58,34 +60,32 @@ define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], func
 		clear: function() {
 			this.model.destroy();
 		}
-
+		
 	});
-
-
 
 	// The Application
 	var AppView = Backbone.View.extend({
 
 		el: $("#todoapp"),
 
-		statsTemplate: _.template($('#stats-template').html()),
+		statsTemplate: _.template($('#stats_template').html()),
 
 		events: {
-			"keypress #new-todo": "createOnEnter",
-			"click #clear-completed": "clearCompleted",
-			"click #toggle-all": "toggleAllComplete"
+			"keypress #new_todo": "createOnEnter",
+			"click #clear_completed": "clearCompleted",
+			"click #toggle_all": "toggleAllComplete"
 		},
 
 		initialize: function() {
 
-			this.input = this.$("#new-todo");
-			this.allCheckbox = this.$("#toggle-all")[0];
+			this.input = this.$("#new_todo");
+			this.allCheckbox = this.$("#toggle_all")[0];
 
 			this.listenTo(Todos, 'add', this.addOne);
 			this.listenTo(Todos, 'reset', this.addAll);
 			this.listenTo(Todos, 'all', this.render);
 
-			this.footer = this.$('footer');
+			this.footer = this.$('#todo_footer');
 			this.main = $('#main');
 
 			Todos.fetch();
@@ -114,7 +114,7 @@ define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], func
 			var view = new TodoView({
 				model: todo
 			});
-			this.$("#todo-list").append(view.render().el);
+			this.$("#todo_list").append(view.render().el);
 		},
 
 		addAll: function() {
@@ -154,7 +154,6 @@ define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], func
 		}
 
 	});
-
 
 	return {
 		AppView: AppView

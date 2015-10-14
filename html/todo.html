@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv=”X-UA-Compatible” content=”IE=Edge”>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>前端规范示例</title>
+    <link rel="stylesheet" href="../css/todos.css"/>
+    <script type="text/javascript" src="../lib/require.js"  data-main="../js/main"></script>
+</head>
+
+<body>
+    <div id="todoapp" class="oso-todo-content">
+        <header>
+            <h1>Todos</h1>
+            <input id="new_todo" type="text" placeholder="What needs to be done?">
+        </header>
+
+        <section id="main">
+            <input id="toggle_all" type="checkbox">
+            <label for="toggle_all">Mark all as complete</label>
+            <ul id="todo_list" class="oso-todo-list"></ul>
+        </section>
+
+        <footer id="todo_footer"></footer>
+    </div>
+
+    <div class="oso-todo-instructions">Double-click to edit a todo.</div>
+
+    <div class="oso-todo-credits">
+        Created by:
+        <br />
+        <a href="http://www.oso.com">oso-liuwei</a>
+        .
+        <br />
+        Rewritten by:
+        <a href="https://github.com/tastejs/todomvc">TodoMVC</a>
+        .
+    </div>
+
+    <!-- Templates -->
+    <script type="text/template" id="item_template">
+        <div class="oso-todo-view">
+            <input class="oso-todo-toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+            <label><%- title %></label>
+            <a class="oso-todo-destroy"></a>
+        </div>
+        <input class="oso-todo-edit" type="text" value="<%- title %>" />
+    </script>
+
+    <script type="text/template" id="stats_template">
+        <% if (done) { %>
+            <a id="clear_completed" class="oso-clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+        <% } %>
+        <div class="oso-todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+    </script>
+</body>
+</html>
