@@ -1,16 +1,25 @@
 "use strict";
 
-define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], function(json2, $,_, Backbone,todoModel) {
+define([
+	'json2', 
+	'jquery',
+	'underscore', 
+	'backbone',
+	'handlebars.runtime',
+	'src/plugin/handlebars_ext',
+	'src/templates/templates.amd',
+	'src/models/todoModel'
+], function(json2, $,_, Backbone,Handlebars,HandlebarsExt,templates,models) {
 
 	// Create a "Todos" variable
-	var Todos = new todoModel.TodoList;
+	var Todos = new models.TodoList;
 
 	// Todo Item View
 	var TodoView = Backbone.View.extend({
 
 		tagName: "li",
 
-		template: _.template($('#item_template').html()),
+		template: templates.item,
 
 		events: {
 			"click .oso-todo-toggle": "toggleDone",
@@ -68,7 +77,7 @@ define(['json2', 'jquery','underscore', 'backbone','src/models/todoModel'], func
 
 		el: $("#todoapp"),
 
-		statsTemplate: _.template($('#stats_template').html()),
+		statsTemplate: templates.stats,
 
 		events: {
 			"keypress #new_todo": "createOnEnter",

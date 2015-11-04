@@ -37,22 +37,5 @@
         <a href="https://github.com/tastejs/todomvc">TodoMVC</a>
         .
     </div>
-
-    <!-- Templates -->
-    <script type="text/template" id="item_template">
-        <div class="oso-todo-view">
-            <input class="oso-todo-toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
-            <label><%- title %></label>
-            <a class="oso-todo-destroy"></a>
-        </div>
-        <input class="oso-todo-edit" type="text" value="<%- title %>" />
-    </script>
-
-    <script type="text/template" id="stats_template">
-        <% if (done) { %>
-        <a id="clear_completed" class="oso-clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
-        <% } %>
-        <div class="oso-todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
-    </script>
 </body>
 </html>
