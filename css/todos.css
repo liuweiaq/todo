@@ -14,7 +14,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-.oso-todo-content {
+.o-todo-content {
 	background: #fff;
 	padding: 20px;
 	margin-bottom: 40px;
@@ -30,14 +30,14 @@ body {
 	border-radius: 0 0 5px 5px;
 }
 
-.oso-todo-content h1 {
+.o-todo-content h1 {
 	font-size: 36px;
 	font-weight: bold;
 	text-align: center;
 	padding: 0 0 10px 0;
 }
 
-.oso-todo-content input[type="text"] {
+.o-todo-content input[type="text"] {
 	width: 466px;
 	font-size: 24px;
 	font-family: inherit;
@@ -53,7 +53,7 @@ body {
 	box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
 }
 
-.oso-todo-content input::-webkit-input-placeholder {
+.o-todo-content input::-webkit-input-placeholder {
 	font-style: italic;
 }
 
@@ -64,29 +64,29 @@ body {
 	display: none;
 }
 
-.oso-todo-list {
+.o-todo-list {
 	margin: 10px 0;
 	padding: 0;
 	list-style: none;
 }
 
-.oso-todo-list li {
+.o-todo-list li {
 	padding: 18px 20px 18px 0;
 	position: relative;
 	font-size: 24px;
 	border-bottom: 1px solid #ccc;
 }
 
-.oso-todo-list li:last-child {
+.o-todo-list li:last-child {
 	border-bottom: none;
 }
 
-.oso-todo-list li.done label {
+.o-todo-list li.done label {
 	color: #777;
 	text-decoration: line-through;
 }
 
-.oso-todo-list .oso-todo-destroy {
+.o-todo-list .o-todo-destroy {
 	position: absolute;
 	right: 5px;
 	top: 20px;
@@ -97,44 +97,44 @@ body {
 	background: url(../img/destroy.png) no-repeat;
 }
 
-.oso-todo-list li:hover .oso-todo-destroy {
+.o-todo-list li:hover .o-todo-destroy {
   	display: block;
 }
 
-.oso-todo-list .oso-todo-destroy:hover {
+.o-todo-list .o-todo-destroy:hover {
   	background-position: 0 -20px;
 }
 
-.oso-todo-list li.oso-todo-editing {
+.o-todo-list li.o-todo-editing {
 	border-bottom: none;
 	margin-top: -1px;
 	padding: 0;
 }
 
-.oso-todo-list li.oso-todo-editing:last-child {
+.o-todo-list li.o-todo-editing:last-child {
 	margin-bottom: -1px;
 }
 
-.oso-todo-list li.oso-todo-editing .oso-todo-edit {
+.o-todo-list li.o-todo-editing .o-todo-edit {
 	display: block;
 	width: 444px;
 	padding: 13px 15px 14px 20px;
 	margin: 0;
 }
 
-.oso-todo-list li.oso-todo-editing .oso-todo-view {
+.o-todo-list li.o-todo-editing .o-todo-view {
 	display: none;
 }
 
-.oso-todo-list li .oso-todo-view label {
+.o-todo-list li .o-todo-view label {
 	word-break: break-word;
 }
 
-.oso-todo-list li .oso-todo-edit {
+.o-todo-list li .o-todo-edit {
 	display: none;
 }
 
-.oso-todo-content footer {
+.o-todo-content footer {
 	display: none;
 	margin: 0 -20px -20px -20px;
 	overflow: hidden;
@@ -150,7 +150,7 @@ body {
 	border-radius: 0 0 5px 5px;
 }
 
-.oso-clear-completed {
+.o-clear-completed {
 	float: right;
 	line-height: 20px;
 	text-decoration: none;
@@ -173,7 +173,7 @@ body {
 	box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0 0;
 }
 
-.oso-clear-completed:hover {
+.o-clear-completed:hover {
 	background: rgba(0, 0, 0, 0.15);
 	-webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
 	-moz-box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
@@ -182,33 +182,33 @@ body {
 	box-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0 0;
 }
 
-.oso-clear-completed:active {
+.o-clear-completed:active {
 	position: relative;
 	top: 1px;
 }
 
-.oso-todo-count span {
+.o-todo-count span {
 	font-weight: bold;
 }
 
-.oso-todo-instructions {
+.o-todo-instructions {
 	margin: 10px auto;
 	color: #777;
 	text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
 	text-align: center;
 }
 
-.oso-todo-instructions a {
+.o-todo-instructions a {
 	color: #369;
 }
 
-.oso-todo-credits {
+.o-todo-credits {
 	margin: 30px auto;
 	color: #999;
 	text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
 	text-align: center;
 }
 
-.oso-todo-credits a {
+.o-todo-credits a {
 	color: #888;
 }

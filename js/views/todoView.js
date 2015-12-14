@@ -22,11 +22,11 @@ define([
 		template: templates.item,
 
 		events: {
-			"click .oso-todo-toggle": "toggleDone",
-			"dblclick .oso-todo-view": "edit",
-			"click .oso-todo-destroy": "clear",
-			"keypress .oso-todo-edit": "updateOnEnter",
-			"blur .oso-todo-edit": "close"
+			"click .o-todo-toggle": "toggleDone",
+			"dblclick .o-todo-view": "edit",
+			"click .o-todo-destroy": "clear",
+			"keypress .o-todo-edit": "updateOnEnter",
+			"blur .o-todo-edit": "close"
 		},
 
 		initialize: function() {
@@ -37,7 +37,7 @@ define([
 		render: function() {
 			this.$el.html(this.template(this.model.toJSON()));
 			this.$el.toggleClass('done', this.model.get('done'));
-			this.input = this.$('.oso-todo-edit');
+			this.input = this.$('.o-todo-edit');
 			return this;
 		},
 
@@ -46,7 +46,7 @@ define([
 		},
 
 		edit: function() {
-			this.$el.addClass("oso-todo-editing");
+			this.$el.addClass("o-todo-editing");
 			this.input.focus();
 		},
 
@@ -58,7 +58,7 @@ define([
 				this.model.save({
 					title: value
 				});
-				this.$el.removeClass("oso-todo-editing");
+				this.$el.removeClass("o-todo-editing");
 			}
 		},
 
