@@ -1,0 +1,27 @@
+{
+  "name": "webDemo-todos",
+  "description": "前端包",
+  "main": "",
+  "authors": [
+    "liuwei"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "backbone": "~1.2.3",
+    "handlebars": "~4.0.5",
+    "requirejs": "~2.1.22",
+    "backbone.localStorage": "~1.1.16",
+    "json2": "*"
+  }
+}
