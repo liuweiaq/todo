@@ -16,7 +16,7 @@ templates['item'] = template({"1":function(container,depth0,helpers,partials,dat
 templates['stats'] = template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing;
 
-  return "<a id=\"clear_completed\" class=\"o-clear-completed\">Clear "
+  return "<a id=\"clear-completed\" class=\"o-clear-completed\">Clear "
     + container.escapeExpression(((helper = (helper = helpers.done || (depth0 != null ? depth0.done : depth0)) != null ? helper : alias2),(typeof helper === "function" ? helper.call(alias1,{"name":"done","hash":{},"data":data}) : helper)))
     + " completed "
     + ((stack1 = (helpers.whether || (depth0 && depth0.whether) || alias2).call(alias1,(helpers.equal || (depth0 && depth0.equal) || alias2).call(alias1,(depth0 != null ? depth0.done : depth0),1,{"name":"equal","hash":{},"data":data}),"item","items",{"name":"whether","hash":{},"fn":container.program(2, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")

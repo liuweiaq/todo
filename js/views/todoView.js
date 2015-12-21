@@ -80,21 +80,21 @@ define([
 		statsTemplate: templates.stats,
 
 		events: {
-			"keypress #new_todo": "createOnEnter",
-			"click #clear_completed": "clearCompleted",
-			"click #toggle_all": "toggleAllComplete"
+			"keypress #new-todo": "createOnEnter",
+			"click #clear-completed": "clearCompleted",
+			"click #toggle-all": "toggleAllComplete"
 		},
 
 		initialize: function() {
 
-			this.input = this.$("#new_todo");
-			this.allCheckbox = this.$("#toggle_all")[0];
+			this.input = this.$("#new-todo");
+			this.allCheckbox = this.$("#toggle-all")[0];
 
 			this.listenTo(Todos, 'add', this.addOne);
 			this.listenTo(Todos, 'reset', this.addAll);
 			this.listenTo(Todos, 'all', this.render);
 
-			this.footer = this.$('#todo_footer');
+			this.footer = this.$('#todo-footer');
 			this.main = $('#main');
 
 			Todos.fetch();
@@ -123,7 +123,7 @@ define([
 			var view = new TodoView({
 				model: todo
 			});
-			this.$("#todo_list").append(view.render().el);
+			this.$("#todo-list").append(view.render().el);
 		},
 
 		addAll: function() {
